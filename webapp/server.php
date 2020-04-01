@@ -11,9 +11,9 @@ session_start();
 $username="";
 $email="";
 
-define('DB_SERVER', '192.168.0.34');
+define('DB_SERVER', '192.168.0.35');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'password');
 define('DB_NAME', 'webapp');
  
 /* Attempt to connect to MySQL database */
