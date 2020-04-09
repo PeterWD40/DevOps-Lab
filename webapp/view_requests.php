@@ -7,6 +7,12 @@ include("server.php");
 //If logged in then user goes to home page else they go to login pagek
 //session_start();
 
+if(!isset($_SESSION['username'])){
+
+	$_SESSION['msg'] = "you must log in first to view this page";
+	echo $_SESSION['msg'];
+	
+}
 if(isset($_SESSION['username'])){
 
 	$_SESSION['msg'] = "you must log in first to view this page";

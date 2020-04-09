@@ -4,6 +4,8 @@ ini_set('display_startup_errors', true);
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
+require('password.php');
+
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 session_start();
@@ -11,7 +13,7 @@ session_start();
 $username="";
 $email="";
 
-define('DB_SERVER', '192.168.0.35');
+define('DB_SERVER', '192.168.0.40');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'password');
 define('DB_NAME', 'webapp');
@@ -59,10 +61,17 @@ if($user) {
 }
 //Register user if no error
 if(count($errors) == 0 ){
-	$password = md5($password); //encrypt password
+#	$password = md5($password); //encrypt password
 	//print $password;
+
+
+#SALTY PASSWORDS----------------------------------------------------------------------------------
+	$hash = password_hash($password, PASSWORD_BCRYPT);
+#---------------------------------------------------------------------------------------------------	
+	
+
 	$query = "INSERT INTO Users (username, email, password, admin) 
-		VALUES ('$username', '$email', '$password', '$admin')";
+		VALUES ('$username', '$email', '$hash', '$admin')";
 	mysqli_query($link, $query);
 	$_SESSION['username'] = $username;
 	$_SESSION['success'] = "You are now logged in";
@@ -87,25 +96,28 @@ if(isset($_POST['login'])) {
 	}
 
 	if(count($errors) == 0 ) {
-
-	$password = md5($password);
-	$query = "SELECT * FROM Users WHERE username ='$username' AND password='$password'";
+#CHANGES MADE FOR SALTED PASSWORDS HERE:---------------------------------------------------------
+	#$password = md5($password);
+	#$query = "SELECT * FROM Users WHERE username ='$username' AND password='$password'";
+	$query = "SELECT * FROM Users WHERE username ='$username'";
 	$results = mysqli_query($link, $query);
 	$row = mysqli_fetch_assoc($results);
-	
 	//	echo "\n there are no errors so far and a query has been sent";
-	if(mysqli_num_rows($results)) {
+	if(mysqli_num_rows($results)){ 
 	//	echo "\n the sql server has found your login";
 	//	print_r($_SESSION);
+		$hash = $row['password'];
+		if (password_verify($password, $hash)){
 		$_SESSION['username'] = $username;
 		$_SESSION['success'] = "Logged in successfully";
 		$_SESSION['admin'] = $row['admin'];
 		//if($row['admin']) echo 'YOU ARE AN ADMIN';
-		header("location: index.php");
+
+		header("location: index.php");}
 	}else{
 		echo "\n the wrong username and password combination has been pushed";
 		array_push($errors, "Wrong username/password combination. Please try again.");}
 }
 }
-echo "\n everything compiled it seems";
+//echo "\n everything compiled it seems";
 ?>

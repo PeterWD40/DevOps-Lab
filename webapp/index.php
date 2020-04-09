@@ -7,14 +7,15 @@
 //If logged in then user goes to home page else they go to login pagek
 session_start();
 
-if(isset($_SESSION['username'])){
+if(!isset($_SESSION['username'])){
 
 	$_SESSION['msg'] = "you must log in first to view this page";
-	//header("location: login.php");
+	echo $_SESSION['msg'];
+	
 }
 
 if(isset($_GET['logout'])){
-
+	session_unset();
 	session_destroy();
 	unset($_SESSION['username']);
 	header("location: login.php");
@@ -28,10 +29,10 @@ if(isset($_GET['logout'])){
 	<title>HOME PAGE</title>
 </head>
 <body>
-	<h1>This is the homepage</h1>
+	
 	<?php
 	if(isset($_SESSION['success'])) : ?>
-
+	<h1>This is the homepage</h1>
 	<div
 		<h3> 
 			<?php
@@ -67,7 +68,7 @@ if(isset($_GET['logout'])){
 
 <?php }?>
 	<div>
-	<button>Logout<a href="index.php?logout=1"></a></button>
+	<a href="index.php?logout=1">Logout</a>
 	</div>
 <?php endif; ?>
 

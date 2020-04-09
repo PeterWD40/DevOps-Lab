@@ -1,15 +1,15 @@
 <?php
 
  //for testing errors:
-ini_set('display_startup_errors', true);
-error_reporting(E_ALL);
-ini_set('display_errors', true);
+//ini_set('display_startup_errors', true);
+//error_reporting(E_ALL);
+//ini_set('display_errors', true);
 
 session_start();
 
-define('DB_SERVER', '192.168.0.34');
+define('DB_SERVER', '192.168.0.40');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'password');
 define('DB_NAME', 'webapp');
 
 /* Attempt to connect to MySQL database */
@@ -19,6 +19,14 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+
+if(!isset($_SESSION['username'])){
+
+	$_SESSION['msg'] = "you must log in first to view this page";
+	echo $_SESSION['msg'];
+	
+}
+
 
 if(isset($_SESSION['username'])) $username = $_SESSION['username'];
 //get the row with this username and save the corresponding password.
