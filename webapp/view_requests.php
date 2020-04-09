@@ -59,6 +59,12 @@ if(isset($_GET['logout'])){
       </tbody>
     </table>
 
+	<br>
+
+	<div>
+	  <a href="index.php">Back to Home Page</a>
+	</div>
+
 </body>
 
 </body>

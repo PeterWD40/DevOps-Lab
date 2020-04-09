@@ -75,7 +75,7 @@ if(count($errors) == 0 ){
 	mysqli_query($link, $query);
 	$_SESSION['username'] = $username;
 	$_SESSION['success'] = "You are now logged in";
-
+	$_SESSION['admin'] = $admin;
 	header("location: index.php");
 }
 }

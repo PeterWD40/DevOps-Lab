@@ -68,7 +68,7 @@ if(isset($_GET['logout'])){
 
 <?php }?>
 	<div>
-	<a href="index.php?logout=1">Logout</a>
+	<a href="index.php?logout=1">Logout     </a>	<a href="reset_password.php">Reset Password</a>
 	</div>
 <?php endif; ?>
 
