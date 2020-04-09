@@ -1,7 +1,7 @@
 <?php
-ini_set('display_startup_errors', true);
-error_reporting(E_ALL);
-ini_set('display_errors', true);
+#ini_set('display_startup_errors', true);
+#error_reporting(E_ALL);
+#ini_set('display_errors', true);
 
 
 //If logged in then user goes to home page else they go to login pagek
@@ -45,21 +45,36 @@ if(isset($_GET['logout'])){
 <?php if(isset($_SESSION['username'])) : ?>
 
 	<h3>Welcome <strong> <?php echo $_SESSION['username']; ?></strong></h3>
-	<?php if ($_SESSION['admin']==1){ ?> <button> View Network Requests</button> <?php  
-	echo $_SESSION['admin']; }?>
+	<?php if ($_SESSION['admin']==1){ ?> 
+		<a href="view_requests.php">View Network Requests</a> <?php } ?>
 
-	<?php if ($_SESSION['admin']==0){ ?> <button>Request Network Account</button> <?php }?>
+	<?php if ($_SESSION['admin']==0){ ?> 
+		<div>
+		<table>
+		<form action="net_request.php" method="post">
+		<tr><td><strong>Request Network Account:</strong></td></tr>
+		<tr><td>
+		Password:</td><td><input type="password" name=pass></input></td></tr>
+		<tr><td colspan=2>
+		<center>
+		<input type=submit value=submit>
+		</center>
+		</td>
+		</tr>
+		</table>
+		
+		</div>
 
-	<button>Logout<a href="index.php?logout='1'"></a></button>
-
+<?php }?>
+	<div>
+	<button>Logout<a href="index.php?logout=1"></a></button>
+	</div>
 <?php endif; ?>
 
 </body>
 
 </body>
 </html>
-
-
 
 
 
