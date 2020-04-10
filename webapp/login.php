@@ -11,7 +11,7 @@
 	
 		<div class="header">
 
-			<h2>Log In</h2>
+			<h2>From Jira to Jenkins</h2>
 		</div>
 		<form action="login.php" method="post">
 			
