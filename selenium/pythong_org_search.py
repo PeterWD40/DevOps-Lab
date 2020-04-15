@@ -11,7 +11,7 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument("--remote-debugging-port=9222")
 driver = webdriver.Chrome(chrome_options=chrome_options)
 
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 driver.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element_by_name("q")
