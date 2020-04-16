@@ -11,13 +11,13 @@
 	
 		<div class="header">
 
-			<h2>From Jira to Jenkins</h2>
+			<h2>Log In</h2>
 		</div>
 		<form action="login.php" method="post">
 			
 		<div>
 			<label for="username">Username</label>
-			<input type="text" name="username" required>
+			<input  type="text" name="username" required>
 		</div>
 
 

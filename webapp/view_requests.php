@@ -35,12 +35,14 @@ if(isset($_GET['logout'])){
 </head>
 <body>
   <h1>Pending Network Requests</h1>
+   <form method="get">
     <table width=100% border="1" style=border-collapse:collagpse;">
       <thead>
         <tr>
 	  <th><strong>Username</strong></th>
 	  <th><strong>Email</strong></th>
 	  <th><strong>Requested</strong></th>
+	  <th><strong>Accept</strong></th>
 	</tr>
       </thead>
       <tbody>
@@ -48,16 +50,19 @@ if(isset($_GET['logout'])){
 <!-- List all the users that have a request -->
 	<?php
 	$count = 1;
-	$sel_query="SELECT * FROM Users WHERE request = 1;";
+	$sel_query="SELECT * FROM Users WHERE request = 1 AND accepted = 0;";
 	$result = mysqli_query($link, $sel_query);
 	while($row = mysqli_fetch_assoc($result)) { ?>
 	<tr><td align="center"><?php echo $row['username']; ?></td>
 	<td align="center"><?php echo $row['email']; ?></td>
 	<td align="center"><?php echo $row['request']; ?></td>
+	<td align="center">
+	<a href="accept_request.php?id=<?php echo $row['username']; ?>">Accept</a></td>
 	</tr>
 	<?php $count++; } ?>
       </tbody>
     </table>
+   </form>
 
 	<br>
 

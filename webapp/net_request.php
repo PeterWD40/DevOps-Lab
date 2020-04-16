@@ -4,7 +4,7 @@
 //ini_set('display_startup_errors', true);
 //error_reporting(E_ALL);
 //ini_set('display_errors', true);
-
+require('password.php');
 session_start();
 
 define('DB_SERVER', '192.168.0.40');
@@ -33,15 +33,21 @@ if(isset($_SESSION['username'])) $username = $_SESSION['username'];
 $sel_query =  "SELECT * FROM Users WHERE username = '$username'";
 $result = mysqli_query($link, $sel_query);
 $row = mysqli_fetch_assoc($result);
-$password = $row['password'];
+$hash = $row['password'];
 
 //if the password entered matches the password in the database then create a request
-if (md5($_POST['pass']) == $password){		
+/*if (md5($_POST['pass']) == $password){		
 	$sel_query =  "UPDATE Users SET request = 1 WHERE username = '$username'";
 	if($sel_query) echo "\n Your request has been sent to a network administrator";
 	echo "<br>" ;
 	$result = mysqli_query($link, $sel_query);
-}
+}*/
+if (password_verify($_POST['pass'], $hash)){
+	$sel_query =  "UPDATE Users SET request = 1 WHERE username = '$username'";
+	if($sel_query) echo "\n Your request has been sent to a network administrator";
+	echo "<br>" ;
+	$result = mysqli_query($link, $sel_query);
+  }
 //else header('Location: index.php');
 ?>
 
