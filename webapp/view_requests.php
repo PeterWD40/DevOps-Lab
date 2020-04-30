@@ -31,10 +31,15 @@ if(isset($_GET['logout'])){
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<title>Network Requests</title>
 </head>
 <body>
-  <h1>Pending Network Requests</h1>
+  <h1 class="sign">Pending Network Requests</h1>
+  <div class="main">
    <form method="get">
     <table width=100% border="1" style=border-collapse:collagpse;">
       <thead>
@@ -57,7 +62,7 @@ if(isset($_GET['logout'])){
 	<td align="center"><?php echo $row['email']; ?></td>
 	<td align="center"><?php echo $row['request']; ?></td>
 	<td align="center">
-	<a href="accept_request.php?id=<?php echo $row['username']; ?>">Accept</a></td>
+	<a name=<?php echo $count; ?> href="accept_request.php?id=<?php echo $row['username']; ?>">Accept</a></td>
 	</tr>
 	<?php $count++; } ?>
       </tbody>
@@ -69,7 +74,7 @@ if(isset($_GET['logout'])){
 	<div>
 	  <a href="index.php">Back to Home Page</a>
 	</div>
-
+</div>
 </body>
 
 </body>

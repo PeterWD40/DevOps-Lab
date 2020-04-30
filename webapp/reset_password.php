@@ -3,11 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<title>RESET PASSWORD</title>
 </head>
 <body>
 	
-	<div class="containter">
+	<div class="main">
 	
 		<div class="header">
 
@@ -17,24 +21,20 @@
 
 			<?php include('errors.php') ?>
 			
-		<div>
-			<label for="password">Old Password :</label>
-			<input type="password" name="oldpassword" required> 
-		</div>
 
-		<div>
-			<label for="password">New Password :</label>
-			<input type="password" name="password" required> 
-		</div>
 
-		<div>
-			<label for="password">Confirm New Password :</label>
-			<input type="password" name="password_2" required>
-		</div>
+			<input placeholder="Old Password" class="pass" type="password" name="oldpassword" required> 
 
-		<button type="submit" name="reg_pass"> Submit </button>
 
-		<p><a href="index.php">Back to Home Page</a></p>
+			<input placeholder="New Password" class="pass" type="password" name="password" required> 
+
+
+			<input placeholder="Confirm New Password" class="pass" type="password" name="password_2" required>
+
+
+		<button class="submit" type="submit" name="reg_pass"> Submit </button>
+ 
+		<p><a class="forgot" href="index.php">Back to Home Page</a></p>
 
 		</form>
 

@@ -3,49 +3,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<title>REGISTRATION</title>
 </head>
 <body>
 	
-	<div class="containter">
+	<div class="main">
 	
-		<div class="header">
 
-			<h2>Register</h2>
-		</div>
-		<form action="registration.php" method="post">
+
+		<p class="sign" align="center">Register</p>
+
+		<form class="form1" action="registration.php" method="post">
 
 			<?php include('errors.php') ?>
 			
-		<div>
-			<label for="username">Username</label>
-			<input type="text" name="username" required>
-		</div>
 
-		<div>
-			<label for="email">Email :</label>
-			<input type="email" name="email" required>
+			
+			<input placeholder="Username" class="un" type="text" name="username" required>
+			<input placeholder="Email@email.com" class="un " type="email" name="email" required>
 
-		</div>
 
-		<div>
-			<label for="password">Password :</label>
-			<input type="password" name="password" required> 
-		</div>
 
-		<div>
-			<label for="password">Confirm Password :</label>
-			<input type="password" name="password_2" required>
-		</div>
+
+
+			<input placeholder="password" class="pass" type="password" name="password" required> 
+
+			<input placeholder="Confirm Password" class="pass" type="password" name="password_2" required>
+
 
 		<div>
 			<label for="admin">Admin :</label>
 			<input type="checkbox" name="admin">
 		</div>
 
-		<button type="submit" name="reg_usr"> Submit </button>
+		<button class="submit" type="submit" name="reg_usr"> Submit </button>
 
-		<p>Already a user<a href="login.php">Log in</a></p>
+		<p class="forgot">Already a user? <a class="forgot" href="login.php">Log in</a></p>
 
 		</form>
 

@@ -1,34 +1,39 @@
-<?php include('server.php'); ?>
+<?php include('server.php');
+      include('errors.php'); ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<title>Log In</title>
 </head>
 <body>
 	
-	<div class="containter">
+	<div class="main">
 	
-		<div class="header">
 
-			<h2>Log In</h2>
-		</div>
-		<form action="login.php" method="post">
+
+		<p class="sign" align="center">Log In</p>
+
+		<form class="form1" action="login.php" method="post">
 			
-		<div>
-			<label for="username">Username</label>
-			<input  type="text" name="username" required>
-		</div>
+		
+	<!--		<label for="username">Username</label> -->
+			<input placeholder="Username" class="un " type="text" name="username" required>
+		
 
 
-		<div>
-			<label for="password">Password :</label>
-			<input type="password" name="password" required> 
-		</div>
+		
+	<!--		<label for="password">Password :</label> -->
+			<input placeholder="Password" class="pass" type="password" name="password" required> 
+		
 
-		<button type="submit" name="login"> Log In </button>
+		<button class="submit" type="submit" name="login"> Log In </button>
 
-		<p>Don't have an account?<a href="registration.php">Register Here</a></p>
+		<p class="forgot">Don't have an account?<a class="forgot" name="registration" href="registration.php">Register Here</a></p>
 
 		</form>
 

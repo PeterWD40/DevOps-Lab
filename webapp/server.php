@@ -116,7 +116,13 @@ if(isset($_POST['login'])) {
 		header("location: index.php");}
 	}else{
 		echo "\n the wrong username and password combination has been pushed";
-		array_push($errors, "Wrong username/password combination. Please try again.");}
+		array_push($errors, "Wrong username/password combination. Please try again.");
+	//print_r($errors);
+	$fp = fopen('./web_errors.log','w');
+	fwrite($fp, print_r($errors,TRUE));
+	fclose($fp);	
+	}
+		
 }
 }
 //echo "\n everything compiled it seems";
