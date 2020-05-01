@@ -16,7 +16,7 @@
 	
 
 
-		<p class="sign" align="center">Log In</p>
+		<p class="sign" align="center">Welcome lusers</p>
 
 		<form class="form1" action="login.php" method="post">
 			
