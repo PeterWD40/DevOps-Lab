@@ -82,7 +82,7 @@ if(count($errors) == 0 ){
 
 //LOGIN USER:
 
-if(isset($_POST['login'])) {
+if(isset($_POST['dirty_login'])) {
 	//echo "got the login information successfully";
 	//print_r($_POST);
 	$username = $_POST['username'];

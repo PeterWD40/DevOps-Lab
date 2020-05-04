@@ -18,7 +18,7 @@
 
 		<p class="sign" align="center">Vulnerable Login</p>
 
-		<form class="form1" action="login.php" method="post">
+		<form class="form1" action="dirty_login.php" method="post">
 			
 		
 	<!--		<label for="username">Username</label> -->
@@ -31,7 +31,7 @@
 			<input placeholder="Password" class="pass" type="password" name="password" required> 
 		
 
-		<button class="submit" type="submit" name="login"> Log In </button>
+		<button class="submit" type="submit" name="dirty_login"> Log In </button>
 
 		<p class="forgot">Don't have an account?<a class="forgot" name="registration" href="registration.php">Register Here</a></p>
 
