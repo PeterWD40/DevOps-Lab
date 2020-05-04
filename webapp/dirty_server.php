@@ -82,11 +82,11 @@ if(count($errors) == 0 ){
 
 //LOGIN USER:
 
-if(isset($_POST['dirty_login'])) {
+if(isset($_GET['dirty_login'])) {
 	//echo "got the login information successfully";
 	//print_r($_POST);
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = $_GET['username'];
+	$password = $_GET['password'];
 
 	/*if(empty($username)){
 		array_push($errors, "Username is required");

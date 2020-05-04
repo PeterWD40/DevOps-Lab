@@ -18,7 +18,7 @@
 
 		<p class="sign" align="center">Vulnerable Login</p>
 
-		<form class="form1" action="dirty_login.php" method="post">
+		<form class="form1" action="dirty_login.php" method="get">
 			
 		
 	<!--		<label for="username">Username</label> -->
