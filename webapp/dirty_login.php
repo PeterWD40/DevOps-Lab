@@ -22,13 +22,13 @@
 			
 		
 	<!--		<label for="username">Username</label> -->
-			<input placeholder="Username" class="un " type="text" name="username" required>
+			<input placeholder="Username" class="un " type="text" name="username" >
 		
 
 
 		
 	<!--		<label for="password">Password :</label> -->
-			<input placeholder="Password" class="pass" type="password" name="password" required> 
+			<input placeholder="Password" class="pass" type="password" name="password" > 
 		
 
 		<button class="submit" type="submit" name="dirty_login"> Log In </button>
