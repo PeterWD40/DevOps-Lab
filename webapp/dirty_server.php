@@ -88,13 +88,13 @@ if(isset($_POST['dirty_login'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	if(empty($username)){
+	/*if(empty($username)){
 		array_push($errors, "Username is required");
 	}
 	if(empty($password)){
 		array_push($errors, "Password is required");
 	}
-
+*/
 	if(count($errors) == 0 ) {
 #CHANGES MADE FOR SALTED PASSWORDS HERE:---------------------------------------------------------
 	#$password = md5($password);
