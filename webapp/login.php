@@ -16,7 +16,7 @@
 	
 
 
-		<p class="sign" align="center">new Title to Login</p>
+		<p class="sign" align="center">Login</p>
 
 		<form class="form1" action="login.php" method="post">
 			
